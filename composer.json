@@ -1,5 +1,5 @@
 {
-	"name": "scavix-wdf/mail",
+	"name": "scavix/wdf-mail",
 	"version": "2025.9.0",
 	"description": "IP2Location components",
 	"type": "library",
@@ -10,7 +10,7 @@
 		]
 	},
 	"require": {
-        "scavix-wdf/core": "^2025.9.0",
+        "scavix/wdf-core": "^2025.9.0",
         "phpmailer/phpmailer": "^6.10.0"
     }
 }
