@@ -1,16 +1,15 @@
 {
-	"name": "scavix/wdf-mail",
-	"version": "1.0.0",
-	"description": "IP2Location components",
-	"type": "library",
-	"license": "LGPL-3.0-or-later",
-	"autoload": {
-		"files": [
-			"bootstrap.php"
-		]
-	},
-	"require": {
-        "scavix/wdf-core": "^1.0.0",
-        "phpmailer/phpmailer": "^6.10.0"
-    }
+  "name": "scavix/wdf-mail",
+  "description": "IP2Location components",
+  "type": "library",
+  "license": "LGPL-3.0-or-later",
+  "autoload": {
+    "files": [
+      "bootstrap.php"
+    ]
+  },
+  "require": {
+    "scavix/wdf-core": "^1.0.0",
+    "phpmailer/phpmailer": "^6.10.0"
+  }
 }
