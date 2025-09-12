@@ -5,9 +5,4 @@ It contains functions to send mails.
 
 Installation
 ============
-Install the package with `composer require scavix/wdf-mail`
-
-Dependencies
-============
-
-* [phpmailer/phpmailer](https://packagist.org/packages/phpmailer/phpmailer)
+Install the package with `composer require {{name}}`.
