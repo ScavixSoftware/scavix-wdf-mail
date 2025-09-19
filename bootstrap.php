@@ -76,30 +76,30 @@ function mail_prepare($recipient,$subject,$message,$plainmessage="",$attachments
 	{
 		$isvalidrecipient = false;
 		// on dev server, only domains/recipients in the whitelist are allowed
-		foreach($CONFIG['mail'][$prefix.'_whitelist'] as $needle)
+		foreach($CONFIG['mail']["{$prefix}_whitelist"] as $needle)
 		{
-			if( !isset($CONFIG['mail'][$prefix.'_recipient']) )
-				$CONFIG['mail'][$prefix.'_recipient'] = $needle;
+			if( !isset($CONFIG['mail']["{$prefix}_recipient"]) )
+				$CONFIG['mail']["{$prefix}_recipient"] = $needle;
 			if(stripos($recipient, $needle) !== false)
 			{
 				$isvalidrecipient = true;
 				break;
 			}
 		}
-		if(!$isvalidrecipient && isset($CONFIG['mail'][$prefix.'_catchall']) )
+		if(!$isvalidrecipient && isset($CONFIG['mail']["{$prefix}_catchall"]) )
         {
             $domain = array_last(explode("@",$recipient,2));
-            if( avail($CONFIG['mail'][$prefix.'_catchall'],$domain) )
+            if( avail($CONFIG['mail']["{$prefix}_catchall"],$domain) )
             {
-                log_debug("email recipient changed from ".var_export($recipient, true)." to ".var_export($CONFIG['mail'][$prefix.'_catchall'][$domain], true));
-                $recipient = $CONFIG['mail'][$prefix.'_catchall'][$domain];
+                log_debug("email recipient changed from ".var_export($recipient, true)." to ".var_export($CONFIG['mail']["{$prefix}_catchall"][$domain], true));
+                $recipient = $CONFIG['mail']["{$prefix}_catchall"][$domain];
                 $isvalidrecipient = true;
             }
         }
-		if(!$isvalidrecipient && isset($CONFIG['mail'][$prefix.'_recipient']) )
+		if(!$isvalidrecipient && isset($CONFIG['mail']["{$prefix}_recipient"]) )
 		{
 			// if not found in whitelist, send to predefined recipient
-			log_debug("email recipient changed from ".var_export($recipient, true)." to ".var_export($CONFIG['mail'][$prefix.'_recipient'], true));
+			log_debug("email recipient changed from ".var_export($recipient, true)." to ".var_export($CONFIG['mail']["{$prefix}_recipient"], true));
 			$recipient = $CONFIG['mail'][$prefix.'_recipient'];
 		}
 	}
@@ -209,7 +209,7 @@ function mail_send($recipient,$subject="",$message="",$plainmessage="",$attachme
 
 	if( !$res )
 	{
-		log_trace("mail_send($subject,$message): " . $mail->ErrorInfo, $recipient);
+		log_trace("mail_send($subject,$message): {$mail->ErrorInfo}", $recipient);
         if(avail($mail, 'debug_lines'))
             log_debug("Detailed mail log:\n",$mail->debug_lines);
 		return $mail->ErrorInfo;
