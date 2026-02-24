@@ -88,7 +88,7 @@ function mail_prepare($recipient,$subject,$message,$plainmessage="",$attachments
 		}
 		if(!$isvalidrecipient && isset($CONFIG['mail']["{$prefix}_catchall"]) )
         {
-            $domain = array_last(explode("@",$recipient,2));
+            $domain = substr_from($recipient, "@", true);
             if( avail($CONFIG['mail']["{$prefix}_catchall"],$domain) )
             {
                 log_debug("email recipient changed from ".var_export($recipient, true)." to ".var_export($CONFIG['mail']["{$prefix}_catchall"][$domain], true));
