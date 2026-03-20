@@ -26,6 +26,6 @@
 	},
 	"require": {
         "scavix/wdf-core": "^1.1.1",
-        "phpmailer/phpmailer": "^6.10.0"
+        "phpmailer/phpmailer": "^7.0.0"
     }
 }

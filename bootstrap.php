@@ -30,6 +30,7 @@
  */
 
 use PHPMailer\PHPMailer\PHPMailer;
+use ScavixWDF\Reflection\WdfReflector;
 use ScavixWDF\Wdf;
 use ScavixWDF\WdfException;
 
@@ -110,7 +111,13 @@ function mail_prepare($recipient,$subject,$message,$plainmessage="",$attachments
         $mail->debug_lines[] = "[MAIL][$level]\t{$str}";
     };
 
-	$mail->SetLanguage("en", __DIR__."/mail/language/");
+    // In 6.11.0 and since 7.0.0 the method is static
+    $meth = WdfReflector::GetInstance($mail)->getMethod('setLanguage');
+    if ($meth->isStatic())
+        $meth->invokeArgs(null, ["en", __DIR__ . "/mail/language/"]);
+    else
+        $meth->invokeArgs($mail, ["en", __DIR__ . "/mail/language/"]);
+
 	$mail->CharSet = "utf-8";
 
 	$mail->IsSMTP();
