@@ -1,9 +1,9 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "version": 4,
+  "version": 5,
   "metadata": {
-    "timestamp": "2026-03-18T06:54:18.930Z",
+    "timestamp": "2026-04-22T11:45:06.936Z",
     "manufacturer": {
       "name": "Scavix Software GmbH & Co. KG",
       "url": [
@@ -12,11 +12,11 @@
     },
     "component": {
       "type": "library",
-      "bom-ref": "pkg:composer/scavix/wdf-mail@1.1.1",
-      "purl": "pkg:composer/scavix/wdf-mail@1.1.1",
+      "bom-ref": "pkg:composer/scavix/wdf-mail@1.1.2",
+      "purl": "pkg:composer/scavix/wdf-mail@1.1.2",
       "group": "scavix",
       "name": "wdf-mail",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
@@ -48,11 +48,11 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "pkg:composer/scavix/wdf-mail@1.1.1",
-      "purl": "pkg:composer/scavix/wdf-mail@1.1.1",
+      "bom-ref": "pkg:composer/scavix/wdf-mail@1.1.2",
+      "purl": "pkg:composer/scavix/wdf-mail@1.1.2",
       "group": "scavix",
       "name": "wdf-mail",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
@@ -82,11 +82,11 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:composer/scavix/wdf-core@1.1.1",
-      "purl": "pkg:composer/scavix/wdf-core@1.1.1",
+      "bom-ref": "pkg:composer/scavix/wdf-core@1.1.2",
+      "purl": "pkg:composer/scavix/wdf-core@1.1.2",
       "group": "scavix",
       "name": "wdf-core",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
@@ -232,29 +232,54 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:composer/phpmailer/phpmailer@6.12.0",
-      "purl": "pkg:composer/phpmailer/phpmailer@6.12.0",
+      "bom-ref": "pkg:composer/phpmailer/phpmailer@7.0.2",
+      "purl": "pkg:composer/phpmailer/phpmailer@7.0.2",
       "group": "phpmailer",
       "name": "phpmailer",
-      "version": "6.12.0",
+      "version": "7.0.2",
       "supplier": {
         "name": "Scavix Software GmbH & Co. KG",
         "url": [
           "https://www.scavix.com"
         ]
-      }
+      },
+      "authors": [
+        {
+          "name": "Marcus Bointon",
+          "email": "phpmailer@synchromedia.co.uk"
+        },
+        {
+          "name": "Jim Jagielski",
+          "email": "jimjag@gmail.com"
+        },
+        {
+          "name": "Andy Prevost",
+          "email": "codeworxtech@users.sourceforge.net"
+        },
+        {
+          "name": "Brent R. Matzelle"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-2.1-only"
+          }
+        }
+      ],
+      "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
     }
   ],
   "dependencies": [
     {
-      "ref": "pkg:composer/scavix/wdf-mail@1.1.1",
+      "ref": "pkg:composer/scavix/wdf-mail@1.1.2",
       "dependsOn": [
-        "pkg:composer/scavix/wdf-core@1.1.1",
-        "pkg:composer/phpmailer/phpmailer@6.12.0"
+        "pkg:composer/scavix/wdf-core@1.1.2",
+        "pkg:composer/phpmailer/phpmailer@7.0.2"
       ]
     },
     {
-      "ref": "pkg:composer/scavix/wdf-core@1.1.1",
+      "ref": "pkg:composer/scavix/wdf-core@1.1.2",
       "dependsOn": [
         "pkg:composer/wikimedia/less.php@5.5.1",
         "external:jQuery@3.7.1",
@@ -266,7 +291,7 @@
       "dependsOn": []
     },
     {
-      "ref": "pkg:composer/undefined@6.12.0",
+      "ref": "pkg:composer/phpmailer/phpmailer@7.0.2",
       "dependsOn": []
     }
   ]
