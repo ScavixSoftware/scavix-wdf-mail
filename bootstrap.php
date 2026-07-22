@@ -45,7 +45,7 @@ function mail_init()
 {
 	global $CONFIG;
 
-    if (!isset($CONFIG['mail']))
+    if (!isset($CONFIG['mail']) && !defined("NO_CONFIG_NEEDED"))
         log_warn("Missing mail configuration");
 	if( !isset($CONFIG['mail']['logging']) )
 		$CONFIG['mail']['logging'] = false;
